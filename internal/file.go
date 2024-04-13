@@ -42,5 +42,6 @@ func (f *File) Chunk() {
 	// 64MB may be too big for this small project.
 	if len(f.content) > 0 {
 		// TODO - Implement a chunking strategy
+		log.Default() // compile
 	}
 }
