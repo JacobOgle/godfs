@@ -7,10 +7,14 @@ ifeq ($(OS_ARCH), x86_64)
 endif
 
 build:
-	GOARCH=${OS_ARCH} GOOS=darwin go build -o bin/${BINARY_NAME}-${OS_NAME}
+	GOARCH=${OS_ARCH} GOOS=${OS_NAME} go build -o bin/${BINARY_NAME}-${OS_NAME}
 
 run: build
 	./bin/${BINARY_NAME}-${OS_NAME}
+
+test:
+	go test ./tests -v
+
 
 clean:
 	go clean
